@@ -1,0 +1,17 @@
+[package]
+name = "lego_os"
+version = "0.1.0"
+edition = "2021"
+
+[target.'cfg(any(target_arch = "riscv32",target_arch = "riscv64"))'.dependencies]
+riscv_utils = { git = "https://github.com/lego-os/riscv_utils.git", branch = "main" }
+
+[target.'cfg(any(target_arch = "arm",target_arch = "aarch64"))'.dependencies]
+arm_utils = { git = "https://github.com/lego-os/arm_utils.git", branch = "main" }
+
+[dependencies]
+filesystem = { git = "https://github.com/lego-os/filesystem.git", branch = "main" }
+net_stack = { git = "https://github.com/lego-os/net_stack.git", branch = "main" }
+dever = { git = "https://github.com/lego-os/dever.git", branch = "main" }
+kcore = {git = "https://github.com/lego-os/kcore.git",branch="main"}
+log = "0"
